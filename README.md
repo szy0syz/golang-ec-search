@@ -102,4 +102,4 @@
 - `GET /product/v1/search?keyword=abc`
 - `GET /product/v2/search?q=abc`
 
-<img width="950" alt="image" src="https://user-images.githubusercontent.com/10555820/197109787-47760bfe-478f-4cb7-9461-aa3b92421928.png">
+<img width="949" alt="image" src="https://user-images.githubusercontent.com/10555820/197109847-80cbb8e5-fa7a-4d85-a702-505a314b1e8a.png">
