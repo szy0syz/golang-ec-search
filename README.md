@@ -162,3 +162,6 @@ Dynamic Mapping 特性
 - 数据写入失败也会自动创建索引，但不会根据数据字段类型创建mapping
 
 dynamic属性设置不同值，对索引存放有很大的区别
+
+<img width="809" alt="image" src="https://user-images.githubusercontent.com/10555820/197314676-0e4f7314-c3b7-469a-9d36-d4b0b508fc68.png">
+<img width="843" alt="image" src="https://user-images.githubusercontent.com/10555820/197314699-2a1b0613-f134-4ceb-854c-b5ad2d17510d.png">
