@@ -276,7 +276,7 @@ X轴
   - 分摊整体压力位目的就是X轴扩展
 - 这个轴的扩展仅适用于产品初期。架构简单，实施快速，研发成本低
 
-**TODO AKF图**
+<img width="582" alt="image" src="https://user-images.githubusercontent.com/10555820/197338219-88c66d1a-5b72-48e9-b507-b4dc69ac9748.png">
 
 > Q: 那么问题来了，如何验证自己的架构方案是否存在过度设计呢？😂 真tm是个灵魂质问
 >
