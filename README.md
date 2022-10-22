@@ -83,7 +83,6 @@
 - 如何设计我们的API接口？
 - 如何管理项目中的配置？
 - 如何做Go工程的包管理？
-- 如何结合Go语言特色优雅的处理错误？
 - 如何解决单元测试中中间件的依赖问题？
 
 业务错误码设计
@@ -103,3 +102,44 @@
 - `GET /product/v2/search?q=abc`
 
 <img width="949" alt="image" src="https://user-images.githubusercontent.com/10555820/197109847-80cbb8e5-fa7a-4d85-a702-505a314b1e8a.png">
+
+Go Module 的包校验
+
+- 为了防止Go Module中的包被篡改
+- go.sum文件保存了依赖包的hash值
+- GOPRIVATE包将不会做checksum校验
+
+如果想魔改那就 `go module vendor`，在项目根目录生成vendor依赖
+
+### 如何结合Go语言特色优雅的处理错误？
+
+```go
+// error的本质
+type error interface {
+  Error() string
+}
+
+type New(text string) error {
+  return &errorString{text}
+}
+
+type errorString struct {
+  s string
+}
+```
+
+#### 实际项目中对错误处理的一些经验
+
+- 使用errors.Wrap或者errors.Wrapf来保存堆栈信息，包装具体的文件文件路径信息到错误中
+
+```go
+path := "path/to/file"
+f, error := os.Open(path)
+if err != nil {
+  return errors.Wrapf(err, "open file %s error", path)
+}
+```
+
+- 一旦函数确定了错误的处理方案以后，错误就不再是错误
+  - 比如出错后我们使用降级方案
+  - 则在降级方法执行成功后我们不再返回错误
