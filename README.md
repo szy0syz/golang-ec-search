@@ -6,7 +6,7 @@
 >
 > 还是搞点实战玩玩，要不然看不懂了
 
-## Notes
+## 项目基础
 
 - 如何设计可扩展可维护的工程目录？
   - 坏处：凌乱无序、不易扩张、不可维护
@@ -150,3 +150,15 @@ if err != nil {
   - 在程序调用链中，我们直接通过返回error来传递错误
   - "还真是和koa或express里的一样"
 - 那么就 "github.com/pkg/errors" 包再进一步进行封装
+
+## ElasticSearch
+
+### `Dynamic Mapping`是特性也是毒性
+
+Dynamic Mapping 特性
+
+- es的mapping类似数据库中的表结构定义
+- 向一个不存在的索引写入数据，会根据写入的字段类型创建mapping
+- 数据写入失败也会自动创建索引，但不会根据数据字段类型创建mapping
+
+dynamic属性设置不同值，对索引存放有很大的区别
